@@ -1,15 +1,16 @@
 # pack.sh
----
 
-## WHAT:
-Pack Chrome Extensions as version-ed zips for deploying on the Web Store. Works on any machine with bash. Simply call:
+Pack Chrome Extensions as versioned zips for deploying on the Web Store. Works on any machine with bash. Optionally also bump up version number in `manifest.json`
 
 ```bash
-$ ./pack
+$ ./pack [bump]
 ```
 
-## HOW:
-Keep this script in top-level of Chrome Extension project, right above the folder where you keep the extension's `manifest.json`. The top level can contain the stuff you need for development, but shouldn't be packaged into the final deployable zip, like your `.git` folder, screen-shots, build scripts, `README.md` etc. I usually call the folder to be packaged `extension/`, and then place `manifest.json`, `src`, `lib` etc. under it. For example, the [PrettyPrintGmail](https://chrome.google.com/webstore/detail/pretty-print-gmail/gdanfldekhdgkbmdoeapbgbcpfglkflg?hl=en) Chrome Extension folder structure looks like this (every two dashed lines represents one tree level):
+## Install
+Get the script and keep in your Chrome Extension project: [pack.sh](https://raw.githubusercontent.com/ShivanKaul/pack.sh/master/pack.sh)
+
+## Usage
+Create a directory named `extension/` and put all the code you want packaged as your Chrome Extension inside it. The `manifest.json` should be immediately inside (one folder below) `extension/`. Keep this `pack.sh` script one directory above `manifest.json` (i.e. same directory level as `extension/`), along with dev stuff like `.git`, screen-shots, `README.md`, etc. For example, the [PrettyPrintGmail](https://chrome.google.com/webstore/detail/pretty-print-gmail/gdanfldekhdgkbmdoeapbgbcpfglkflg?hl=en) Chrome Extension folder structure looks like this (every two dashed lines represents one tree level):
 
 ```
    |--CHANGELOG.md
@@ -32,11 +33,11 @@ Keep this script in top-level of Chrome Extension project, right above the folde
 ```
 
 
-The script checks the current version from the manifest file, and repacks the source code into a new version-numbered zip, deleting the previous version-ed zip if it exists. 
+The script checks the current version from the manifest file, and repacks the source code into a new version-numbered zip, deleting the previous versioned zip if it exists. 
 
 Note: Removes .DS_Stores before packaging, if on Mac.
 
-If you want to bump up the version number in the `manifest.json` before packing, pass in `bump` as an argument to the script:
+If you want to bump up the version number in the `manifest.json` before packing, pass in `bump` as an argument to the script. Note that it is assumed that you've versioned your extension in the [{major}.{minor}.{patch}](http://semver.org/) way.
 
 ```bash
 $ ./pack bump
