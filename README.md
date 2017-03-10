@@ -38,6 +38,7 @@ The script checks the current version from the manifest file, and repacks the so
 
 Note: Removes .DS_Stores before packaging, if on Mac.
 
+## Bump
 If you want to bump up the version number in the `manifest.json` before packing, pass in `bump` as an argument to the script. Note that it is assumed that you've versioned your extension in the [{major}.{minor}.{patch}](http://semver.org/) way.
 
 ```bash
