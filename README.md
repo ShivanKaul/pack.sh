@@ -1,6 +1,6 @@
 # pack.sh
 
-Pack Chrome Extensions as versioned zips for deploying on the Web Store. Optionally also bump up version number in `manifest.json`:
+Easily pack Chrome Extensions into versioned zips for deploying on the Web Store. Optionally also bump up version number in `manifest.json` before packing:
 
 ```bash
 $ ./pack [bump]
