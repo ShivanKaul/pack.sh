@@ -8,7 +8,7 @@ $ ./pack [bump]
 
 
 ## Install
-Get the script and keep in your Chrome Extension project: [pack.sh](https://raw.githubusercontent.com/ShivanKaul/pack.sh/master/pack.sh)
+Get the script and keep in top level of your Chrome Extension project: [pack.sh](https://raw.githubusercontent.com/ShivanKaul/pack.sh/master/pack.sh)
 
 ## Usage
 Create a directory named `extension/` and put all the code you want packaged as your Chrome Extension inside it. The `manifest.json` should be immediately inside (one folder below) `extension/`. Keep this `pack.sh` script one directory above `manifest.json` (i.e. same directory level as `extension/`), along with dev stuff like `.git`, screen-shots, `README.md`, etc. For example, the [PrettyPrintGmail](https://chrome.google.com/webstore/detail/pretty-print-gmail/gdanfldekhdgkbmdoeapbgbcpfglkflg?hl=en) Chrome Extension folder structure looks like this (every two dashed lines represents one tree level):
